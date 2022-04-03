@@ -47,11 +47,11 @@ let g:circadian_night_theme = 'onehalfdark'
 
 ### Specifying Commands
 
-This modified version of circadian.vim allows the user to execute an arbitray
+This modified version of circadian.vim allows the user to execute an arbitrary
 command and/or set of command with command chaining. The custom command will
 always be executed before the theme is modified with `colorscheme`.
 
-Custom commands should be secified the following way:
+Custom commands should be specified the following way:
 
 ```vim
 let g:circadian_day_cmds = "let x='somevalue'"
