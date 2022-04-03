@@ -38,19 +38,19 @@ fun! s:set_theme(timer_id)
 	endif
 
 	if s:day == v:true
-		if exists("g:circadian_day_theme")
-			execute "colorscheme ".g:circadian_day_theme
-		endif
         if exists("g:circadian_day_cmds")
             execute g:circadian_day_cmds
         endif
-	else
-		if exists("g:circadian_night_theme")
-			execute "colorscheme ".g:circadian_night_theme
+		if exists("g:circadian_day_theme")
+			execute "colorscheme ".g:circadian_day_theme
 		endif
+	else
         if exists("g:circadian_night_cmds")
             execute g:circadian_night_cmds
         endif
+		if exists("g:circadian_night_theme")
+			execute "colorscheme ".g:circadian_night_theme
+		endif
 	endif
 endfun
 
