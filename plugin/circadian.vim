@@ -19,16 +19,16 @@ if exists("g:circadian_day_start")
 endif
 
 " Cache latest daytime check in this var
-let s:day = 0
+let s:day = v:true
 
 fun! s:set_theme(timer_id)
 	let l:hour = strftime('%H')
 	let l:day = 0
 
 	if l:hour > s:day_start && l:hour < s:night_start
-		let l:day = 1
+		let l:day = v:true
 	else
-		let l:day = 0
+		let l:day = v:false
 	endif
 
 	if s:day == l:day
@@ -37,7 +37,7 @@ fun! s:set_theme(timer_id)
 		let s:day = l:day
 	endif
 
-	if s:day > 0
+	if s:day == v:true
 		if exists("g:circadian_day_theme")
 			execute "colorscheme ".g:circadian_day_theme
 		endif
